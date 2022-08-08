@@ -11,7 +11,6 @@ namespace Console
             //dB_Test1Entities1.SaveChanges();
 
             DBEntities dBEntities = new DBEntities();
-            //dBEntities.users.Add(new user { Id = 3, Name = "dfg", poject = new poject { Name = "dfgdfg", ID = 1 } });
             //dBEntities.pojects.Add(new poject { Name = "dfgdfg", ID = 2, user = new user { Id = 4, Name = "dfg" } });
             var users = dBEntities.users.Where(X => X.Name = "sdfsd").ToList();
             foreach (var u in users)
@@ -19,6 +18,7 @@ namespace Console
                 System.Console.WriteLine(u.Name);
             }
             var us = dBEntities.users.Find(1);
+            //us.Name = "User updated";
             //us.Name = "User updated";
             dBEntities.users.Remove(us);
             dBEntities.SaveChanges();
